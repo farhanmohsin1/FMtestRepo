@@ -22,8 +22,4 @@ steps:
   inputs:
     showNegligible: false
     connection: 'ServerlessFunctionTesting-fm'
-    windowsScannerVersion: '2022.4'- task: serverlesSecurity@1
-  inputs:
-    showNegligible: false
     windowsScannerVersion: '2022.4'
-    showWillNotFix: true
