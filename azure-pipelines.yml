@@ -18,8 +18,11 @@ steps:
     echo See https://aka.ms/yaml
     git clone https://github.com/farhanmohsin1/FMtestRepo.git
   displayName: 'Run a multi-line script'
-
 - task: serverlesSecurity@1
+  inputs:
+    showNegligible: false
+    connection: 'ServerlessFunctionTesting-fm'
+    windowsScannerVersion: '2022.4'- task: serverlesSecurity@1
   inputs:
     showNegligible: false
     windowsScannerVersion: '2022.4'
