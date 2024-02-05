@@ -14,15 +14,13 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    git clone https://github.com/farhanmohsin1/FMtestRepo.git
+
+
   displayName: 'Run a multi-line script'
 
+- 
 - task: serverlesSecurity@1
   inputs:
-    codeScanPath: '$(Build.SourcesDirectory)/FMtestRepo'
     showNegligible: false
     connection: 'ServerlessFunctionTesting-fm'
     windowsScannerVersion: '2022.4'
-    showWillNotFix: true
