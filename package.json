@@ -1,0 +1,15 @@
+{
+  "name": "node-exec",
+  "version": "1.0.0",
+  "description": "Simple node.js function for AWS Lambda to demonstrate Aqua serverless function security.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Urbanski",
+  "license": "ISC",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "sshpk": "^1.9.2"
+  }
+}
