@@ -30,5 +30,5 @@ steps:
     showNegligible: false
     windowsScannerVersion: '6.5.0'
     scanner: 'registry.aquasec.com/scanner:latest-saas'
-    registry: 'FMtestREgistry'
+    registry: 'FMTestRegistry'
     connection: 'AquaImageScanningConnection'
