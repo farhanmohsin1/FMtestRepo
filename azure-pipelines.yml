@@ -17,11 +17,10 @@ steps:
   
 - bash: |
      docker pull mongo:latest
-  #  docker pull registry.aquasec.com/scanner:latest-saas
-  #  docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan -H https://99c607c318.cloud.aquasec.com -A bc8830944ba2567c10fae95c3bbe432880d262ae0199e2adb571a41b9202cbd4 --local nginx:stable-alpine 
-  displayName: Image Scan > Install
+     docker pull registry.aquasec.com/scanner:latest-saas
+  displayName: Download Image for Scanning
 
-- task: AquasecScanner@4
+- task: aquasecScanner@4
   inputs:
     image: 'mongo:latest'
     scanType: 'local'
