@@ -25,7 +25,7 @@ steps:
     image: 'mongo:latest'
     scanType: 'local'
     containerRuntime: 'docker'
-    register: true
+    register: false
     hideBase: false
     showNegligible: false
     scanner: 'registry.aquasec.com/scanner:latest-saas'
