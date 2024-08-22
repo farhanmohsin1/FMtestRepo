@@ -25,9 +25,10 @@ steps:
     image: 'mongo:latest'
     scanType: 'local'
     containerRuntime: 'docker'
-    register: false
+    register: true
     hideBase: false
     showNegligible: false
+    windowsScannerVersion: '6.5.0'
     scanner: 'registry.aquasec.com/scanner:latest-saas'
-    registry: 'Ad Hoc Scans'
+    registry: 'FMtestREgistry'
     connection: 'AquaImageScanningConnection'
