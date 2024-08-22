@@ -13,8 +13,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'AquaRegistry'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    command: 'login'
 
 - bash: |
     docker pull nginx:stable-alpine
