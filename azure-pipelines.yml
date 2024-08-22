@@ -10,18 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script:  #curl https://files.pythonhosted.org/packages/0f/6f/40f1b5c6bafc809dd21a9e577458ecc1d8062a7e10148d140f402b535eaa/cryptography-42.0.2.tar.gz -o cryptography-42.0.2.tar.gz
-  displayName: 'Run a multi-line script'
 - task: Docker@2
   inputs:
     containerRegistry: 'AquaRegistry'
-    command: 'login'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
 - bash: |
-docker pull nginx:stable-alpine
-docker login https://registry.aquasec.com
-docker pull registry.aquasec.com/scanner:latest-saas
-docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan -H https://99c607c318.cloud.aquasec.com -A bc8830944ba2567c10fae95c3bbe432880d262ae0199e2adb571a41b9202cbd4 --local nginx:stable-alpine --socket docker
-displayName: Image Scan > Install
+    docker pull nginx:stable-alpine
+    docker pull registry.aquasec.com/scanner:latest-saas
+    docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan -H https://99c607c318.cloud.aquasec.com -A bc8830944ba2567c10fae95c3bbe432880d262ae0199e2adb571a41b9202cbd4 --local nginx:stable-alpine --socket docker
+  displayName: Image Scan > Install
