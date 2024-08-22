@@ -10,13 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'AquaRegistry'
-    command: 'login'
-
-
-
 
 - bash: |
      docker pull mongo:latest
