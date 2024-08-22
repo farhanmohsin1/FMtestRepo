@@ -29,4 +29,5 @@ steps:
     hideBase: false
     showNegligible: false
     scanner: 'registry.aquasec.com/scanner:latest-saas'
+    registry: 'Docker Hub'
     connection: 'AquaImageScanningConnection'
